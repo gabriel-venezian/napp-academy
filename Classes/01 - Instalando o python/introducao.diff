@@ -1,0 +1,44 @@
+# Acessando o interpretador:
+python3
+
+# Saindo do interpretador: 
+exit()
+
+# Definindo apelidos:
+alias python=python3
+alias ferramenta=python3
+
+# Definindo apelidos constantes:
+# No diretório padrão do usuário, utilizando algum editor de texto (neste caso o nano), modificar o arquivo .bashrc
+nano .bashrc
+# Definindo o apelido:
+# Meus apelidos
+alias python=python3   
+# Salvar e sair
+# Utilizar o comando source.bashrc ou reiniciar o terminal e os ajustes estarão concluídos 
+
+# Limpar o terminal de comando:
+clear
+Control + L
+
+# Criar um script .py utilizando o editor de texto:
+nano file_name.py
+# Escrever os comandos dentro do arquivo, e depois salvar e sair (Control + S, Control + X)
+
+# Utilizar o interpretador python para executar o script criado:
+python file_name.py
+
+# Criando um ambiente virtual:
+# Instalando o virtualenv:
+sudo apt install python3-virtualenv
+# sudo: solicitar privilégio de administrador
+# apt: programa que irá instalar os pacotes solicitados (equivalente ao pip do python ou npm do node)
+# Após finalizar a instalação, instalar o ambiente virtual (para que seja possível isolar as dependências):
+virtualenv -p python3 virtual_env
+# Ativar o virtualenv:
+source 'home/venezian/Documents/Napp Academy/virtual_env/bin/activate'
+# Desativar o virtualenv:
+deactivate
+
+# Instalando o ipython: 
+pip install ipython

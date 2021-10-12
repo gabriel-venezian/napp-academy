@@ -1,0 +1,100 @@
+# Definindo a estrutura mínima (onde definir quais as ações, comportamentos e atributos):
+class MinhaPrimeiraClasse:
+    """Minha Primeira Classe"""
+    pass
+
+# Criando um objeto:
+objeto1 = MinhaPrimeiraClasse()
+
+# Visualizar informações sobre o objeto:
+help(objeto1)
+
+# Definindo uma outra classe:
+class SegundaClasse:
+    """Classe que retorna números"""
+    def retorna_dez(self):
+        return 10
+    def retorna_numero(self, numero):
+        return numero
+
+# Criando um objeto 2 (instância da segunda classe):
+objeto2 = SegundaClasse()
+objeto2.retorna_dez()
+objeto2.retorna_numero(100)
+
+# Criando uma classe para realizar o cálculo do IMC:
+class IMC:
+# Atributos da classe (variáveis internas):    
+    peso = 90
+    altura = 1.85
+# Definindo o método de cálculo:
+    def calculo(self):
+        return peso / (altura * altura)    
+
+objeto_imc = IMC()
+objeto_imc.peso
+objeto_imc.altura
+
+objeto_imc_2 = IMC()
+objeto_imc_2.peso
+objeto_imc_2.altura
+objeto_imc_2.nome = 'Nome do usuário'
+
+# Verificar mais informações sobre o objeto:
+objeto_imc_2__class__
+objeto_imc_2.__dict__
+
+# Relizando o cálculo:
+class IMC:
+    peso = 90
+    altura = 1.85
+    def calculo(self):
+        return self.peso / (self.altura * self.altura) 
+
+# Instanciar o objeto:
+objeto_imc = IMC()
+
+# Retornar o valor do cálculo:
+round(objeto_imc.calculo(), 2)     
+
+# Resumindo:
+class IMC:
+    """
+    Cálculo do IMC baseado em 00
+    """
+    def __init__(self, peso = 80, altura = 1.90):
+        """
+        Construtor de objetos IMC para cálculo do IMC de cada objeto.
+        
+        Args: 
+                peso(int, optional): Peso da pessoa. Padrão 80.
+                altura (float, optional): ALtura da pessoa. Padrão 1.65.
+        """
+        self.peso = peso
+        self.altura = altura
+        self.imc = self.calculo()
+        
+    def calculo(self):
+        """
+        Método para cálculo do IMC
+        """
+        return self.peso / (self.altura / self.altura)
+
+pessoa1 = IMC(89, 1.89)    
+pessoa2 = IMC()
+
+pessoa1.peso
+pessoa1.altura
+pessoa1.imc
+round(pessoa1.calculo(), 2)
+
+pessoa2.peso
+pessoa2.altura
+pessoa2.imc
+round(pessoa2.calculo(), 2)
+
+# Exibir as informações sobre o objeto:
+help(pessoa1)
+
+pessoa1.__dict__
+pessoa2.__dict__

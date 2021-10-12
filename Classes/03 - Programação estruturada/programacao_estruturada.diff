@@ -1,0 +1,28 @@
+# Criando um script em python através do terminal:
+gedit script_exemplo.py
+nano script_exemplo.py
+
+# Executar o script possibilitando ações através do terminal:
+python -i script_exemplo.py
+
+# Seleção:
+idade = 20
+if idade > 18:
+    print('Possui idade para sair')
+else:
+    print('Não possui idade para sair')
+
+# Iteração:
+lista_compra = ['pera', 'uva', 'abacaxi']
+
+for item in lista_compra:
+    print(item)
+
+for item in lista_compra:
+    print(item.upper())
+
+lista_compra.append(12)
+
+for item in lista_compra:
+    if type(item) is str:
+        print(item.upper())    

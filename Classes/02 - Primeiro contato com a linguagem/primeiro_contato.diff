@@ -1,0 +1,55 @@
+# Documentação oficial:
+https://docs.python.org/3/
+
+# Declarar variáveis:
+nome = 'Gabriel Venezian'
+idade = 22
+sexo = 'M'
+altura = 1.85
+
+# Retornar a identidade de um objeto (onde está alocado):
+id(nome)
+
+# Realizar operações com números:
+n1 = 1
+n2 = 1
+print(n1 + n2)
+2 + 2
+
+# Verificar o tipo de um objeto:
+type(nome)
+
+# Concatenar strings:
+nome_registrado = nome_registrado + 'Alexandre'
+
+# Fatiar strings (slice):
+nome[0:7] ou nome[:7]
+# De 2 em 2:
+nome[::2]
+# Criar um objeto utilizando o método slice para realizar uma busca:
+busca = slice(0, 7, 1)
+nome[slice]
+
+# Métodos dos objetos string:
+# Split:
+nome.split(' ')
+# Letras em maiúsculo: 
+nome.upper()
+# Verificar se é do tipo numérico (retorna True ou False):
+idade.isalnum()
+
+# Principais métodos de um objeto:
+help(str)
+
+# Criando sequências mutáveis (listas):
+nomes = ['Pedro', 'Thiago', 'João']
+# Verificando o tipo:
+type(nomes)
+# Pesquisando o item da lista a partir do índice:
+nomes[-1]
+# Adicionando itens no final da lista:
+nomes.append('Gabriel')
+# Adicionando itens em uma posição específica da lista:
+nomes.insert(3, 'Letícia')
+# Realizando buscas na lista:
+nomes[:2]

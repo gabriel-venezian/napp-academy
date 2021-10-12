@@ -1,0 +1,47 @@
+# Módulo csv - possui os módulos reader e writer para ler e escrever
+# Importar o módulo csv:
+import csv
+
+# Abrir o arquivo:
+fp = open('arquivo_1.csv')
+
+# Utilizar o módulo reader (retorna cada registro contido no csv em forma de lista):
+csv_reader = csv.reader(fp)
+
+# Exibir todas as linhas contidas no csv:
+for line in csv_reader:
+    print(line)
+
+# Fechar o arquivo csv:
+fp.close()
+
+# Utilizando o método DictReader (retorna cada registro contido no csv em forma de dicionário):
+fp = open('arquivo_1.csv')
+
+csv_reader = csv.DictReader(fp)
+
+for line in csv_reader:
+    print(line)
+
+# Utilizando gerenciadores de contexto para facilitar a manipulação de arquivos:
+with open('arquivo_1.csv') as fp:
+# Ler os primeiros 62 caracteres do arquivo:
+    src = fp.read(62)
+
+# Realizando a leitura de um arquivo e armazenamento das informações em outro:
+with open('arquivo_1.csv') as fp:
+    csv_reader = csv.reader(fp)
+    with open('novo_arquivo.csv', 'w') as new_file:
+        csv_write = csv.writer(new_file)
+        for line in csv_reader:
+            csv_write.writerow(line)
+
+# Utilizando dicionários:
+fieldname = ['Nome', 'CPF', 'E-mail', 'Data', 'Hostname', 'IP', 'Browser', 'Endereço', 'Cartão de crédito', 'Vencimento']
+with open('arquivo_1.csv') as fp:
+    csv_reader = csv.DictReader(fp)
+    with open('novo_arquivo_2.csv', 'w') as new_file:
+        csv_writer = csv.DictWriter(new_file, fieldnames = fieldname)
+        csv_writer.writeheader()
+        for line in csv_reader:
+            csv_writer.writerow(line)

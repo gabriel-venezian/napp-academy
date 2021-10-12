@@ -1,0 +1,71 @@
+# Módulo utilizado para manipulação de data e hora
+# Utilizando o datetime:
+import datetime
+
+hoje1 = datetime.datetime.today()
+
+hoje1.year
+hoje1.month
+hoje1.year
+
+# Exibir o datetime de um objeto no padrão iso: 
+hoje1.isoformat()
+hoje1 = date.fromisoformat('2021-09-12')
+
+#  forma de importação:
+from datetime import datetime
+hoje2 = datetime.today()
+
+# Importando apenas o date:
+from datetime import date
+hoje3 = date.today()
+
+# Exemplo:
+from datetime import datetime, date, time, timezone
+
+d = date(2005, 7, 14)
+t = time(12, 30)
+
+# Realizando uma combinação:
+datetime.datetime(2005, 7, 14, 12, 30)
+
+# Converter string para datetime:
+str_data = '15/02/21 13:30'
+
+dt = datetime.strptime(str_data, '%d/%m%/y %H:%M')
+
+# Utilizando o método timetuple():
+dt.timetuple()
+tuple(dt.timetuple())
+
+# Objeto timedelta - representa a diferença entre duas datas ou horas:
+from datetime import timedelta
+
+delta = timedelta(days = 50, seconds = 27, microseconds = 10, milliseconds = 29000, minutes= 5, hours = 8, weeks = 2) 
+
+print(delta)
+
+# Verificar quantos dias faltam até meu aniversário:
+import time
+from datetime import date
+
+today = date.today()
+
+my_bday = date(today.year, 11, 10)
+
+if my_bday < today:
+    my_bday = my_bday.replace(year = today.year + 1)
+
+time_to_bday = abs(my_bday - today)
+
+datetime.timedelta(days=59)
+
+time_to_bday.days
+
+# Verificar a diferença entre duas datas:
+dt1 = date(2014, 10, 5)
+dt2 = date.today()
+
+diff = dt2 - dt1
+
+diff.days

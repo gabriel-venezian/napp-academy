@@ -1,0 +1,56 @@
+# Docstring - string literal que ocorre como primeira instrução em uma definição de módulo, função, clase ou método
+def retorna_dez():
+    """Esta função retorna sempre o número 10."""
+    return 10
+
+nome = 'Gabriel'
+
+# Chamando a função:
+retorna_dez()
+
+# Retornar as informações sobre a função (ipython): 
+retorna_dez? 
+nome.upper?
+
+# Retornar as informações sobre a função incluindo parte o código (ipython):
+retorna_dez??
+
+# Retornar as informações sobre uma função:
+retorna_dez.__doc__
+nome.upper.__doc__
+
+# Argumento especial args - permite inserir n parâmetros dentro de uma função, agrupando-os em uma tupla:
+def valores(*args):
+    print(args)
+
+valores('Gabriel', 'Venezian', '22', '1.85', 'Araras', 'SP', [10, 10, 10, 10])
+
+# Argumento especial kwargs - permite inserir n parâmetros dentro de uma função, agrupando-os em um dicionário: 
+def cidadao(**kwargs):
+    print(kwargs)
+
+cidadao(id = '01', nome = 'Gabriel Venezian', sexo = 'M', altura = 1.85, peso = 90.00)
+
+# Exemplo - Effective Python:
+def log(message, values):
+    if not values:
+        print(message)
+    else:
+        values_str = ','.join(str(x) for x in values)
+        print('%s: %s' % (message, values_str))
+
+log('My numbers are', [1, 2]) 
+log('Hi there', [])   
+log('Hi there') 
+
+# Exemplo utilizando args:
+def log(message, *values):
+    if not values:
+        print(message)
+    else:
+        values_str = ','.join(str(x) for x in values)
+        print('%s: %s' % (message, values_str))
+
+log('My numbers are', [1, 2]) 
+log('Hi there', [])   
+log('Hi there') 

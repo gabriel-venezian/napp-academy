@@ -1,0 +1,77 @@
+# Tuplas:
+tupla = (1, 2, 3, 1, 4, 1)
+
+# Contando quantas vezes um objeto aparece em uma tupla:
+tupla.count(1)
+
+# Identificar a primeira ocorrência do objeto na tupla:
+tupla.index(4)
+
+# Atribuindo valores de uma tupla a objetos:
+registro = ('Gabriel Venezian', 'gabriel.venezian@hotmail.com', 22)
+
+nome, email, idade = registro
+
+# Mesclar estruturas de dados:
+lista_registros = []
+
+registro1 = ('Produto 1', 100, 150.55)
+registro2 = ('Produto 2', 200, 247.25)
+registro3 = ('Produto 3', 300, 23.21)
+
+lista_registros.append(registro1)
+lista_registros.append(registro2)
+
+# Percorrendo os valores armazenados:
+lista_registros[0]
+lista_registros[0][0]
+
+# Somando os itens de uma lista:
+soma = 0
+
+for item in lista_registros:
+    soma += item[1]
+print(soma)
+
+# Gerando a média desta soma:
+media = soma / len(lista_registros)
+
+# Utilizando o objeto range:
+# Iniciar em 0, ir até 10, de 2 em 2:
+intervalo = range(0, 10, 2)
+
+# Verificar se um número está presente no intervalo (retorna True ou False):
+2 in intervalo
+
+# Gerando uma lista através do intervalo:
+list(intervalo)
+
+# Realizando iterações com a lista:
+for item in list(intervalo):
+    print(item * 2)
+
+# Exibir itens de em 2:
+intervalo = range(0, len(lista_registros), 2)
+
+for produto in list(intervalo):
+    print(lista_registros[produto])
+
+# Utilizando a instrução try:
+lista_registros.append(('Produto 4', 400, '25'))
+lista_registros.append(('Produto 5', 500, 'Sem Valor'))
+
+soma = 0
+for item in lista_registros:
+    try:
+        soma += item[2]
+    except TypeError:
+        pass
+
+# Tratando o erro:
+# Obs.: Evitar usar o comando try aninhado (várias vezes um dentro do outro)
+soma = 0
+for item in lista_registros:
+    try:
+        soma += item[2]
+    except TypeError:
+        print('Não é possível somar ' + item[-1])

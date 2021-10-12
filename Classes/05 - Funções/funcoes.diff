@@ -1,0 +1,48 @@
+# The Zen of Python
+import this
+
+# Funções: relação entre os elementos de dois conjuntos
+def duplica(parametro):
+    return parametro * 2
+
+duplica(2)
+duplica([1, 2, 3])
+
+# Função de cálculo de IMC:
+def imc_1(peso, altura):
+    return peso / (altura * altura)
+
+# Tratando os possíveis erros:    
+def imc_2(peso, altura):
+    try:
+        return round(peso / (altura * altura), 2)
+    except TypeError:
+        return('Não foi possível calcular o IMC')
+
+# Forçando uma mensagem de erro caso algum dos parâmetros não seja numérico:
+def imc_3(peso, altura):
+    try:
+        imc = round(peso / (altura * altura), 2)
+    except TypeError:
+        raise TypeError('Parâmetro não númerico no cálculo do IMC.')
+    return imc
+
+# Sanitizando a função:
+def imc_4(peso, altura):
+    try:
+        if altura < 0 or altura > 2.20:
+            raise Exception('Erro! Altura incorreta.')
+        if peso < 50 or peso > 200:
+            raise Exception('Erro! Peso incorreto.')
+        imc = round(peso / (altura * altura), 2)
+        except TypeError:
+            raise TypeError('Parâmetros não numéricos')
+        return imc
+        
+# Definir um valor padrão como parâmetro da função:
+def imc_5(peso = 80, altura = 1.85):
+    return round(peso / (altura * altura), 2)
+
+# Determinar o contexto de execução das funções:
+if__name__=="__main__":
+    funcoes_arqui()

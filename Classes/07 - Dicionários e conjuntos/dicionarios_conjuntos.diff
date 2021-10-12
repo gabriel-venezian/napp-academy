@@ -1,0 +1,100 @@
+# Dicionários - conjuntos de chave e valor:
+a = dict(one = 1, two = 2, three = 3)
+b = {'one': 1, 'two': 2, 'three': 3}
+
+# Utilizar o método zip para converter listas de valores em dicionário:
+c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+
+# Transformando uma lista de tuplas em um dicionário:
+d = dict([('one', 1), ('two', 2), ('three', 3)])
+
+# Outro método de criar um dicionário:
+e = dict({'one': 1, 'two': 2, 'three': 3})
+
+# Todos estes objetos são iguais
+a == b == c == d == e
+
+# Criando um dicionário vazio:
+lista_telefonica = {}
+type(lista_telefonica)
+
+# Adicionando uma chave a um dicionário (mapeamento chave valor, neste caso lista de valores): 
+lista_telefonica['Gabriel'] = ['Gabriel Venezian', 'Araras']
+
+# Adicionando mais valores à um dicionário:
+lista_telefonica['Letícia'] = ['Letícia', 'Araras']
+lista_telefonica['Lucas'] = ['Lucas', 'Leme']
+lista_telefonica['xyz'] = 'Teste'
+lista_telefonica['x'] = 10
+
+# Informando a chave para que os valores sejam retornados:
+lista_telefonica['xyz'] 
+
+# Converter o dicionário em lista, criando assim uma lista de chaves:
+list(lista_telefonica)
+
+# Verificando se o objeto está presente na lista gerada a partir de um dicionário (retorna True ou False):
+'x' in list(lista_telefonica)
+
+# Verificar o tamanho de um dicionário:
+len(lista_telefonica)
+
+# Utilizando o método try para verificar se um objeto existe no dicionário utilizando sua chave, caso não exista retornará um erro:
+try:
+    lista_telefonica['Ana']
+except KeyError:
+    print('Chave não encontrada')
+
+# Utilizando o método get: informar a chave, e o valor padrão caso não exista
+lista_telefonica.get('Gabriel', 'Chave não encontrada')
+lista_telefonica.get('Ana', 'Chave não encontrada')
+
+# Remover chaves de um dicionário:
+lista_telefonica.pop('xyz')
+lista_telefonica.pop('x')
+
+# Exibindo as chaves e listas presentes em um dicionário:
+for key in lista_telefonica:
+    print(key,': ', lista_telefonica[key])
+
+# Conjuntos - coleção de objetos únicos:
+lista = [1, 2, 3, 4, 1, 2, 3]
+lista_sem_duplicidade = set(lista)
+type(lista_sem_duplicidade)
+lista_sem_duplicidade = list(lista_sem_duplicidade)
+
+# Criar uma lista utilizando a função range:
+a = set(list(range(1, 8)))
+b = set(list(range(1, 8, 2)))
+
+# Realizando operações com conjuntos:
+a = set(list(range(1, 8)))
+b = set(list(range(5, 13)))
+c = {4, 5}
+
+# Verificando a união entre conjuntos:
+a.union(b)
+
+# Verificando a interseção entre conjuntos:
+a.insersection(b)
+
+# Verificando a diferença entre conjuntos:
+a.difference(b)
+a - b
+
+# Verificando se um conjunto é subconjunto:
+c.issubset(a)
+c.issubset(b)
+
+# Verificando se um elemento está presente em um conjunto (retorna True ou False):
+5 in a
+
+# Situação problema:
+# Desenvolva a função extrair novos_registros. Esta função deve receber duas listas como parâmetro. Ambas as listas são listas com tuplas, mas a primeira está desatualizada. A função deve retornar uma lista com os registros acrescentados na segunda lista.
+lista_antiga = [('Pessoa 1', 20), ('Pessoa 2', 21), ('Pessoa 3', 22)]
+lista_nova = [('Pessoa 1', 20), ('Pessoa 2', 21), ('Pessoa 3', 22), ('Pessoa 4', 23), ('Pessoa 5', 24)]
+
+old_set = set(lista_antiga)
+new_set = set(lista_nova)
+
+extrair_novos_registros = list(new_set - old_set)
